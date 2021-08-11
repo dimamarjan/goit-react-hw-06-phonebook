@@ -19,12 +19,7 @@ export function ContactList() {
     const [showList, setShoList] = useState(false);
 
     const onDeleteHeandler = ({ target }) => {
-        setNewDataStore([...store]);
-        store.forEach(contact => {
-            if (contact.id === target.id) {
-                setDataToDelete(contact);
-            };
-        });
+        setDataToDelete(target.id);
     };
 
 
@@ -64,10 +59,9 @@ export function ContactList() {
 
     useEffect(() => {
         if (dataToDelete) {
-            newDataStore.splice(newDataStore.indexOf(dataToDelete), 1);
-            dispatch(delContact(newDataStore));
+            dispatch(delContact(dataToDelete));
         }
-    },[dataToDelete, dispatch, newDataStore])
+    },[dataToDelete, dispatch])
 
 
     return (

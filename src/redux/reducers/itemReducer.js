@@ -7,7 +7,7 @@ const itemReducer = (state = initialState, action) => {
         case ADD_CONTACT:
             return [...state, action.payload];
         case DEL_CONTACT:
-            return [...action.payload];
+            return state.filter(contact => contact.id !== action.payload);
         default:
             return state;
     }
