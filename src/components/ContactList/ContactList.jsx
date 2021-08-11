@@ -12,7 +12,6 @@ export function ContactList() {
     const filterData = useSelector(store => store.filter);
     const dispatch = useDispatch();
     const [filteredArr, setFilteredArr] = useState([]);
-    const [newDataStore, setNewDataStore] = useState([]);
     const [dataToDelete, setDataToDelete] = useState();
 
     const [showFilteredList, setShowFilteredList] = useState(false);
