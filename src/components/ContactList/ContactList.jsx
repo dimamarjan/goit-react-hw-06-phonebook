@@ -19,7 +19,7 @@ export function ContactList() {
     const [showList, setShoList] = useState(false);
 
     const onDeleteHeandler = ({ target }) => {
-        setNewDataStore(store);
+        setNewDataStore([...store]);
         store.forEach(contact => {
             if (contact.id === target.id) {
                 setDataToDelete(contact);
